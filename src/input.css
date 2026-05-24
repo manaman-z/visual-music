@@ -1,0 +1,15 @@
+@import "tailwindcss";
+body {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  color: #721cb8;
+}
+
+@theme {
+  --color-dark: #232323;
+  --color-light: #721cb8;
+  --color-accent: #023e8a;
+}
+ 

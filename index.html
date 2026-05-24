@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player with Visualizer</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light flex justify-center items-center h-screen p-4 font-['Jersey_10']">
+    <audio id="audio-player" crossorigin="anonymous"></audio>
+    <div class="h-80 w-full max-w-md border flex flex-col justify-between bg-dark">
+
+        <div class="w-full flex flex-col sm:flex-row justify-between border-b">
+            <div class="w-full p-2 border-b sm:border-b-0 min-w-0">
+                <h1 id="track-title" class="text-xl truncate">Loading...</h1>
+                <p id="track-artist" class="text-lg truncate text-gray-400">Artist</p>
+            </div>
+            <div class="w-full flex justify-between items-center sm:border-l h-12 sm:h-auto">
+                <button id="btn-prev"
+                    class="h-full w-full text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer">Prev</button>
+                <button id="btn-play-pause"
+                    class="h-full w-full text-xl border-x sm:border-x hover:bg-light hover:text-dark transition-colors cursor-pointer">
+                    <span id="label-play">Play</span>
+                    <span id="label-pause" class="hidden">Pause</span>
+                </button>
+                <button id="btn-next"
+                    class="h-full w-full text-xl border-r sm:border-r-0 hover:bg-light hover:text-dark transition-colors cursor-pointer">Next</button>
+                <button id="fftSize"
+                    class="h-full w-full text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer">Size</button>
+            </div>
+        </div>
+
+        <div class="w-full flex justify-between items-center gap-3 p-3 border-b text-lg select-none">
+            <span id="current-time" class="min-w-10 text-left">0:00</span>
+            <div id="progress-container"
+                class="grow bg-[#292929] h-2 rounded cursor-pointer relative overflow-hidden">
+                <div id="progress-bar" class="bg-light h-full w-0 transition-all duration-100"></div>
+            </div>
+            <span id="total-duration" class="min-w-10 text-right">0:00</span>
+        </div>
+
+        <div class="w-full grow relative bg-black/10 flex items-center justify-center overflow-hidden">
+            <canvas id="visualizer" class="absolute inset-0 w-full h-full p-1"></canvas>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
