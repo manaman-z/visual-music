@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,47 +9,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
 </head>
-
-<body class="bg-dark text-light flex justify-center items-center h-screen p-4 font-['Jersey_10']">
+<body class="bg-dark text-light flex flex-col justify-around items-center min-h-screen p-4 font-['Jersey_10']">
     <audio id="audio-player" crossorigin="anonymous"></audio>
-    <div class="h-80 w-full max-w-md border flex flex-col justify-between bg-dark">
-
-        <div class="w-full flex flex-col sm:flex-row justify-between border-b">
-            <div class="w-full p-2 border-b sm:border-b-0 min-w-0">
-                <h1 id="track-title" class="text-xl truncate">Loading...</h1>
-                <p id="track-artist" class="text-lg truncate text-gray-400">Artist</p>
+    <button id="infoBtn"
+        class="absolute top-4 left-4 h-8 w-8 border-dashed border px-2 hover:bg-light hover:text-dark transition-colors cursor-pointer opacity-100">?</button>
+    <div id="infoTab"
+        class="bg-dark absolute border border-dashed top-4 left-4 p-2 max-w-64 transition-opacity duration-500 opacity-0 pointer-events-none">
+        Music is low quality intentionally. You can find full HQ album on: newgrounds.com
+        You can adjust visualizer's waveform scale using "Size" button.
+    </div>
+    <div class="h-80 w-full max-w-md border flex flex-col justify-between bg-dark border-dashed ">
+        <div class="w-full flex flex-col sm:flex-row justify-between border-b border-dashed">
+            <div class="w-full flex border-b sm:border-b-0 min-w-0  border-dashed">
+                <div class="w-full p-2">
+                    <div class="flex gap-1">
+                        <h1 id="track-title" class="text-xl truncate">Loading...</h1>
+                    </div>
+                    <p id="track-artist" class="text-lg truncate text-gray-400">Artist</p>
+                </div>
+                <button id="fftSize"
+                    class="h-full w-[50%] text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer border-dashed">Size</button>
             </div>
-            <div class="w-full flex justify-between items-center sm:border-l h-12 sm:h-auto">
+            <div class="w-full flex justify-between items-center sm:border-l h-12 sm:h-auto border-dashed">
                 <button id="btn-prev"
                     class="h-full w-full text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer">Prev</button>
                 <button id="btn-play-pause"
-                    class="h-full w-full text-xl border-x sm:border-x hover:bg-light hover:text-dark transition-colors cursor-pointer">
+                    class="h-full w-full text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer">
                     <span id="label-play">Play</span>
                     <span id="label-pause" class="hidden">Pause</span>
                 </button>
                 <button id="btn-next"
-                    class="h-full w-full text-xl border-r sm:border-r-0 hover:bg-light hover:text-dark transition-colors cursor-pointer">Next</button>
-                <button id="fftSize"
-                    class="h-full w-full text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer">Size</button>
+                    class="h-full w-full text-xl hover:bg-light hover:text-dark transition-colors cursor-pointer">Next</button>
             </div>
         </div>
-
-        <div class="w-full flex justify-between items-center gap-3 p-3 border-b text-lg select-none">
+        <div class="w-full flex justify-between items-center gap-3 p-3 border-b border-dashed text-lg select-none">
             <span id="current-time" class="min-w-10 text-left">0:00</span>
-            <div id="progress-container"
-                class="grow bg-[#292929] h-2 rounded cursor-pointer relative overflow-hidden">
+            <div id="progress-container" class="grow bg-[#292929] h-2 rounded cursor-pointer relative overflow-hidden">
                 <div id="progress-bar" class="bg-light h-full w-0 transition-all duration-100"></div>
             </div>
             <span id="total-duration" class="min-w-10 text-right">0:00</span>
         </div>
-
         <div class="w-full grow relative bg-black/10 flex items-center justify-center overflow-hidden">
             <canvas id="visualizer" class="absolute inset-0 w-full h-full p-1"></canvas>
         </div>
-
     </div>
-
+    <footer class="w-full max-w-md border border-dashed p-2 text-center text-gray-500">
+        <p>© 2026 Visual Music Player - Created by manaman-z</p>
+        <div>
+            <a href="https://github.com/manaman-z">github.com</a>
+            <a href="https://manaman-z.github.io/astronomy-picture-of-the-day/">astronomy-picture-of-the-day</a>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
