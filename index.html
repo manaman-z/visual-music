@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
 </head>
-<body class="bg-dark text-light flex flex-col justify-around items-center min-h-screen p-4 font-['Jersey_10']">
+
+<body
+    class="bg-dark text-light flex flex-col justify-center items-center min-h-dvh p-4 gap-4 font-['Jersey_10'] overflow-hidden select-none">
+    <canvas id="bg-grid"></canvas>
     <audio id="audio-player" crossorigin="anonymous"></audio>
     <button id="infoBtn"
         class="absolute top-4 left-4 h-8 w-8 border-dashed border px-2 hover:bg-light hover:text-dark transition-colors cursor-pointer opacity-100">?</button>
@@ -18,12 +22,14 @@
         Music is low quality intentionally. You can find full HQ album on: newgrounds.com
         You can adjust visualizer's waveform scale using "Size" button.
     </div>
+    <h1 class="text-3xl">Visual Music Player by <a class="truncate hover:text-gray-400 transition-colors"
+            href="">manaman-z</a></h1>
     <div class="h-80 w-full max-w-md border flex flex-col justify-between bg-dark border-dashed ">
         <div class="w-full flex flex-col sm:flex-row justify-between border-b border-dashed">
             <div class="w-full flex border-b sm:border-b-0 min-w-0  border-dashed">
                 <div class="w-full p-2">
                     <div class="flex gap-1">
-                        <h1 id="track-title" class="text-xl truncate">Loading...</h1>
+                        <h1 id="track-title" class="text-xl truncate glitch-effect">Loading...</h1>
                     </div>
                     <p id="track-artist" class="text-lg truncate text-gray-400">Artist</p>
                 </div>
@@ -43,23 +49,26 @@
             </div>
         </div>
         <div class="w-full flex justify-between items-center gap-3 p-3 border-b border-dashed text-lg select-none">
-            <span id="current-time" class="min-w-10 text-left">0:00</span>
+            <span id="current-time" class="min-w-10 text-left tabular-nums">0:00</span>
             <div id="progress-container" class="grow bg-[#292929] h-2 rounded cursor-pointer relative overflow-hidden">
                 <div id="progress-bar" class="bg-light h-full w-0 transition-all duration-100"></div>
             </div>
-            <span id="total-duration" class="min-w-10 text-right">0:00</span>
+            <span id="total-duration" class="min-w-10 text-right tabular-nums">0:00</span>
         </div>
-        <div class="w-full grow relative bg-black/10 flex items-center justify-center overflow-hidden">
+        <div class="w-full grow relative bg-dark flex items-center justify-center overflow-hidden">
             <canvas id="visualizer" class="absolute inset-0 w-full h-full p-1"></canvas>
         </div>
     </div>
-    <footer class="w-full max-w-md border border-dashed p-2 text-center text-gray-500">
+    <footer class="w-full max-w-md border border-dashed p-3 text-center text-gray-500 text-sm flex flex-col gap-1">
         <p>© 2026 Visual Music Player - Created by manaman-z</p>
-        <div>
-            <a href="https://github.com/manaman-z">github.com</a>
-            <a href="https://manaman-z.github.io/astronomy-picture-of-the-day/">astronomy-picture-of-the-day</a>
+        <div class="flex justify-center gap-4">
+            <a href="https://github.com/manaman-z"
+                class="hover:underline hover:text-gray-300 transition-colors">github.com</a>
+            <a href="https://manaman-z.github.io/astronomy-picture-of-the-day/"
+                class="hover:underline hover:text-gray-300 transition-colors">apod</a>
         </div>
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
