@@ -157,8 +157,8 @@ const canvas = document.getElementById("visualizer");
 const canvasCtx = canvas.getContext("2d");
 
 const sounds = {
-  hover: new Audio("AudioFX/hover.wav"),
-  click: new Audio("AudioFX/click.wav"),
+  hover: new Audio("AudioFX/Hover.wav"),
+  click: new Audio("AudioFX/Click.wav"),
 };
 
 sounds.hover.volume = 0.5;
