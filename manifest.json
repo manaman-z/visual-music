@@ -7,7 +7,7 @@
     "theme_color": "#721cb8",
     "icons": [
         {
-            "src": "/images/logoVM.png",
+            "src": "images/logoVM.png",
             "sizes": "512x512",
             "type": "image/png"
         }
