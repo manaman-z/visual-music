@@ -1,0 +1,15 @@
+{
+    "name": "Visual Music Player",
+    "short_name": "VMP",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#232323",
+    "theme_color": "#721cb8",
+    "icons": [
+        {
+            "src": "/images/logoVM.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

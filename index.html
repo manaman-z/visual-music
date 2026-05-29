@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player with Visualizer</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#721cb8">
+    <title>Visual Music Player</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/logoVM.png">
 </head>
 
 <body
@@ -19,7 +22,9 @@
         class="absolute top-4 left-4 h-8 w-8 border-dashed border px-2 hover:bg-light hover:text-dark transition-colors cursor-pointer opacity-100">?</button>
     <div id="infoTab"
         class="bg-dark absolute border border-dashed top-4 left-4 p-2 max-w-64 transition-opacity duration-500 opacity-0 pointer-events-none">
-        Music is low quality intentionally. You can find full HQ album on: newgrounds.com
+        Music is low quality intentionally. You can find full HQ album on: <a
+            class="hover:underline hover:text-gray-300 transition-colors"
+            href="https://mu-manaman.newgrounds.com/">newgrounds.com</a>
         You can adjust visualizer's waveform scale using "Size" button.
     </div>
     <h1 class="text-3xl">Visual Music Player by <a class="truncate hover:text-gray-400 transition-colors"
@@ -66,6 +71,11 @@
                 class="hover:underline hover:text-gray-300 transition-colors">github.com</a>
             <a href="https://manaman-z.github.io/astronomy-picture-of-the-day/"
                 class="hover:underline hover:text-gray-300 transition-colors">apod</a>
+            <a href="https://mu-manaman.newgrounds.com/"
+                class="hover:underline hover:text-gray-300 transition-colors">newgrounds.com</a>
+            <a href="https://www.youtube.com/@mus.manaman"
+                class="hover:underline hover:text-gray-300 transition-colors">youtube.com</a>
+
         </div>
     </footer>
     <script src="script.js"></script>

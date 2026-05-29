@@ -1,3 +1,14 @@
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then((reg) =>
+        console.log("Service Worker Registered Successfully!", reg)
+      )
+      .catch((err) => console.log("Error Service Worker:", err));
+  });
+}
+
 const bgCanvas = document.getElementById("bg-grid");
 const bgCtx = bgCanvas.getContext("2d");
 bgCtx.imageSmoothingEnabled = false;
@@ -5,7 +16,7 @@ bgCtx.imageSmoothingEnabled = false;
 const icons = [];
 
 const iconSize = 48;
-const spacing = 128;
+const spacing = 96;
 const speed = 0.2;
 
 const iconSources = [
